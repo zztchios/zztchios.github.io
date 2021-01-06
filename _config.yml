@@ -1,28 +1,27 @@
 ﻿# Site settings
-title: LJQ Blog
-SEOTitle: 刘继强的博客 | LJQ Blog
+title: zztchios Blog
+SEOTitle: zztchios的博客 | zztchios Blog
 header-img: img/post-bg-desk.jpg
-email: 2265940560@qq.com
-gmail: 2929dch@gmail.com
-description: "此生无悔入软工! | 刘继强，BigData & ML Lover，a software engineering student| 这里是刘继强的个人博客，梦想探索更大的计算机世界！"
-keyword: "LJQ, 刘继强的博客, LJQ Blog, 博客, 个人网站, 互联网, 软件工程, JavaScript, BigData, 后端, ML, AI"
-url: "https://29DCH.github.io"          # your host, for absolute URL
+email: zztchios@163.com
+description: "知易行难! | zztchios，CV & ML Lover，a student| This is zztchios blog！"
+keyword: "zztchios的博客, zztchios Blog, 博客, 个人网站, computer vision, Deep Learning, Machine Learning, CV, PR, AI"
+url: "https://zztchios.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: " https://github.com/29DCH/29DCH.github.io.git" # you code repository
+github_repo: " https://github.com/zztchios/zztchios.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "景景景景景色分明"
+sidebar-about-description: "落霞与孤鹜齐飞，秋水共长天一色！"
 sidebar-avatar: /img/panda-waving.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 sidebar-avatar1: /img/grass.png
 
 
 # SNS settings
 RSS: false
-weibo_username:     6611378969
-zhihu_username:     liu-ji-qiang-96
-github_username:    29DCH
-csdn_username:    CowBoySoBusy
+#weibo_username:     6611378969
+#zhihu_username:     liu-ji-qiang-96
+github_username:    zztchios
+csdn_username:    我是chios
 #facebook_username:
 #jianshu_username:
 #twitter_username:
@@ -64,11 +63,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 1ed56e618c6a157c95fb                            #生成的clientID
-  clientSecret: 6ce427c53d99affdb0c17c05148f14c0e5d3405a    #生成的clientSecret
-  repo: 29DCH.github.io    #仓库名称
-  owner: 29DCH    #github用户名
-  admin: 29DCH
+  clientID: 329bc9a86c4aea4b0849                           #生成的clientID
+  clientSecret: af9df1d9baf6af42ec3e83085c6483d26b0f18df    #生成的clientSecret
+  repo: zztchios.github.io    #仓库名称
+  owner: zztchios    #github用户名
+  admin: zztchios
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -97,25 +96,3 @@ service-worker: true
 
 
 
-# Friends
-friends: [
-    {
-        title: "suyeq",
-        href: "http://blog.suyeq.com/"
-    },{
-        title: "RainbomSea",
-        href: "http://RainbomSea.github.io"
-    },{
-        title: "Hux Blog",
-        href: "https://huangxuan.me/"
-    },{
-        title: "柏荧的博客 | BY Blog",
-        href: "http://qiubaiying.top/"
-    },{
-        title: "Joe's Blog",
-        href: "https://hijiangtao.github.io/"
-    },{
-        title: "老王之家",
-        href: "http://wangbf.top/"
-    }
-]
