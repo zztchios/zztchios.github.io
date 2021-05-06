@@ -55,14 +55,14 @@ Transformer最早应用于机器翻译，类似于黑箱操作，如图1所示�
 
 <img src="https://img-blog.csdnimg.cn/20210506014709697.png?x-oss-process=image,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMzMxNDUx,size_16,color_FFFFFF,t_70 "  height="300" width="445">
 
-<img src="https://i0.hdslb.com/bfs/article/f902046c6cbfcd7e5a20b2823245d1dc497d0eb3.gif" alt="image" style="zoom:80%;" />
+<img src="https://img-blog.csdnimg.cn/img_convert/ebb1285b59df983954fc2ceaa5bf66be.gif#pic_center" style="zoom:80%;" />
 
 <center><font face="微软雅黑">图2 Encoders & Decoders</font></center>
 
 
 <p style="text-indent:2em">编码器和解码器堆栈各自具有用于其各自输入的对应嵌入层，编码层和解码层分别有3层，经过3层编码层后结果分别送入不同的解码层中(类似于残差)，作者充分利用了Res模块，每一块都加入了残差单元，如图3所示。</p>
 
-<img src="C:\Users\zzt\AppData\Roaming\Typora\typora-user-images\image-20210504164042439.png "  height="400" width="500">
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210506014637997.png?x-oss-process=image,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMzMxNDUx,size_16,color_FFFFFF,t_70#pic_center)
 
 <center><font face="微软雅黑">图3 Encoders和Decoders堆叠嵌入</font></center>
 
@@ -152,7 +152,7 @@ Transformer突破性表现的关键是对注意力的使用(自注意力机制�
 
 具体流程动图如下：
 
-![自注意力演示](E:\transformer\Attention is all your need\自注意力演示.gif)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210506094738598.gif#pic_center)
 
 <center><font face="微软雅黑">图10 自注意力过程gif</font></center>
 
