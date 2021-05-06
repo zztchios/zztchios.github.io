@@ -11,8 +11,9 @@ tags:
     - Attention系列
 ---
 <!--<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>-->
+```HTML
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
+```
 # 前言
 
 &emsp;&emsp;最近Transformer很火，从NLP一直烧到了图像领域，不得不仔细研读一番。还记得初始看到Transformer在骨架识别应用是在2020年初疫情在家的时候，中科院Lei shi等人去除骨架中骨骼先验信息，采用Transformer自注意力寻找骨骼节点之间的关联性，当时感觉作者思路很惊奇。但是基于当时的理解，认为这仅仅是对Non-Local的一种泛化，没有细究，现在仔细想来，错过了一次技术热潮。算是一种教训，在今后学习中应该谨记，善于发现创新潮。
