@@ -53,7 +53,7 @@ Transformer最早应用于机器翻译，类似于黑箱操作，如图1所示�
 
 <p style="text-indent:2em">黑箱里面到底是什么呢？非研究人员不必知道，能用就行，但是为了更好地剖析模型，本文将继续细化模型。如图2所示，Transformer采用了NLP最常用的Encoder-Decoder架构。</p>
 
-<img src="C:\Users\zzt\AppData\Roaming\Typora\typora-user-images\image-20210428104400891.png "  height="300" width="445">
+<img src="https://img-blog.csdnimg.cn/20210506014709697.png?x-oss-process=image,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMzMxNDUx,size_16,color_FFFFFF,t_70 "  height="300" width="445">
 
 <img src="https://i0.hdslb.com/bfs/article/f902046c6cbfcd7e5a20b2823245d1dc497d0eb3.gif" alt="image" style="zoom:80%;" />
 
@@ -581,7 +581,7 @@ class Decoder(nn.Module):
 
 # Transformer
 
-<img src="C:\Users\zzt\AppData\Roaming\Typora\typora-user-images\image-20210505224826076.png" alt="image-20210505224826076" style="zoom:80%;" />
+<img src="https://img-blog.csdnimg.cn/20210506015017984.png?x-oss-process=image,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMzMxNDUx,size_16,color_FFFFFF,t_70#pic_center" alt="image-20210505224826076" style="zoom:80%;" />
 
 ```python
 class Transformer(nn.Module):
