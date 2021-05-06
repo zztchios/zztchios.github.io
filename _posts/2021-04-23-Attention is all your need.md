@@ -194,6 +194,7 @@ Transformer突破性表现的关键是对注意力的使用(自注意力机制�
 &emsp;&emsp;Transformer的作者们提出了一个简单但非常创新的位置编码方法，能够满足上述所有的要求。首先，这种编码不是单一的一个数值，而是包含句子中特定位置信息的$d$维向量（非常像词向量）。第二，这种编码没有整合进模型，而是用这个向量让每个词具有它在句子中的位置的信息。换句话说，**通过注入词的顺序信息来增强模型输入**。
 
 给定长度为$n$的输入序列，让$t$表示词在序列中的位置，$\vec{p_t}\in\mathbb{R}^d$表示t位置的对应向量，$d$是向量维度。$f:\mathbb{N}\rightarrow\mathbb{R}^d$是生成位置向量$\vec{p_t}$的函数，定义如下：
+
 $$
 \begin{equation}
 \vec{p_t}^{(i)}=f(t)^{(i)}=\begin{cases}
@@ -214,18 +215,21 @@ $$
 从函数定义中可以看出，频率沿向量维度减少。因此，在波长上形成从$2\pi$到$10000\cdot 2\pi$几何级数。
 
 位置编码$\vec{p_t}$包含每个频率的正弦对和余弦对(d是可以被2整除)。
+
 $$
+\begin{equation}
 \begin{gathered}
 \vec{p_t}=\begin{bmatrix} \sin(w_1\cdot t) \\ \cos(w_1\cdot t) \\ \sin(w_2\cdot t) \\ \cos(w_2\cdot t) \\ \vdots \\ \sin(w_{\frac{d}{2}}\cdot t) \\ \cos(w_{\frac{d}{2}}\cdot t) \end{bmatrix}
 \end{gathered}
+\end{equation}
 $$
 **性质1**
 
-对于固定偏移量k和位置t，$PE_t^TPE_{t+k}$取决于$k$，也就是说两个位置编码的点积可以反映两个字间的距离。
+对于固定偏移量k和位置t，$$PE_t^TPE_{t+k}$$取决于$$k$$，也就是说两个位置编码的点积可以反映两个字间的距离。
 
 **性质2**
 
-对于偏移量k和位置t，$PE_t^TPE_{t-k}=PE_t^TPE_{t+k}$，意味着这种位置向量的编码是没有方向性的。
+对于偏移量k和位置t，$$PE_t^TPE_{t-k}=PE_t^TPE_{t+k}$$，意味着这种位置向量的编码是没有方向性的。
 
 具体证明过程可参见邱希鹏老师[论文](https://arxiv.org/pdf/1911.04474.pdf)
 
