@@ -294,7 +294,8 @@ Mask在Transformer中主要作用：
 
 Sample：
 
-如句子seq包含两个词，分别embedding为$[1,1,1,1]$和$[1,1,1,1]$。然而要求句子长度为4，所以，需要padding补0。如下式所示：
+如句子seq包含两个词，分别embedding为$$[1,1,1,1]$$和$$[1,1,1,1]$$。然而要求句子长度为4，所以，需要padding补0。如下式所示：
+
 $$
 \begin{gathered}
 \begin{bmatrix} 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{bmatrix}
