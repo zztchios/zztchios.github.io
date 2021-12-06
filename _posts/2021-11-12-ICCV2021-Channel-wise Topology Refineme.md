@@ -229,7 +229,7 @@ $$\mathbf{z_i^k}=\sum_{p_j\in \mathcal{N}(p_i)}\mathbf{x_j^kW_j^k}\tag9$$
 首先，包含三个CTR-GCs block去提取节点间的关系，
 
 <div align=center>
-<img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/_resources/83a35926175c698e950e69bdce1f6d09.png" width="300" height="XXX" />
+<img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/83a35926175c698e950e69bdce1f6d09.png" width="300" height="XXX" />
 </div>
 
 CTR-GC用来提取具有输入特征X的图的特征。然后将时间序列pool之后，用池化后的特征推断通道拓扑。Specifically,利用φ和ψ的下降率r提取紧凑表示。之后，时间池化被用作聚合时间特征。After that，CTR-GC建立成对的减法操作和激活操作。采用$$\xi$$提高激活的通道维度，以获得channel特定相关性，这些相关性用于完善共享拓扑$$A$$以获取通道方面的拓扑结构。Eventually, channel-wise 聚合在每个骨架图中应用去获取输出表达$$\mathbf{S}^\mathbf{o}$$
