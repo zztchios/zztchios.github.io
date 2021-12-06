@@ -81,7 +81,7 @@ tags:
 ![时空自注意力](https://github.com/zztchios/zztchios.github.io/raw/master/img/d96d9cea8760e8e0b9f05e17fad85bfe.png)
 ## Spatial Self-Attention (SSA)
 
-&emsp;&emsp;如图1(a)所示, first calculate $$q_i^t\in \mathcal{R}^{dq}$$, $$k_i^t\in \mathcal{R}^{dq}$$ and $$v_i^t\in \mathcal{R}^{dq}$$;Then, 计算a query-key dot product 获取权重$\alpha_{i,j}^t\in matgh$(权重代表两个节点之间的关联性强度)。
+&emsp;&emsp;如图1(a)所示, first calculate $$q_i^t\in \mathcal{R}^{dq}$$, $$k_i^t\in \mathcal{R}^{dq}$$ and $$v_i^t\in \mathcal{R}^{dq}$$;Then, 计算a query-key dot product 获取权重$$\alpha_{i,j}^t\in matgh$$(权重代表两个节点之间的关联性强度)。
 a weighted sum is computed to obtain a new embedding for node $$i^t$$($$\sum$$的目的是为了获取节点新的嵌入)
 $$a_{i.j}^t=\mathbf{q_i^t}\cdot \mathbf{k_j^t}^T,\forall{t}\in T, \mathbf{z}_i^t=\sum_jsoftmax_j(\frac{a_{i.j}^t}{\sqrt{d_k}})\mathbf{v}_j^t\tag{1}$$
 
