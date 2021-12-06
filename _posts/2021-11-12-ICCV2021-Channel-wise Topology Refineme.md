@@ -111,7 +111,7 @@ The author describe many existing methods such as  pseudo-image, GCNs, 2s-AGCN 
    $$\mathbf{Z}=\mathcal{A}(\mathcal{T(\mathbf{X}),\mathcal{R}(\mathcal{M}(\mathbf{X}),\mathbf{A})})\tag{2}$$
 
 <div align=center>
-<img src="../../_resources/b951d2de473b508b47f36db8c7a07a17.png" width="800" height="XXX" />
+<img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/b951d2de473b508b47f36db8c7a07a17.png" width="800" height="XXX" />
 </div>
 
 **Feature Transformation**
@@ -123,7 +123,7 @@ $$\widetilde{X}=\mathcal{T(\mathbf{X})}=\mathbf{X}\mathbf{W}\tag3$$
 其中$$\widetilde{X}\in \mathbb{R}^{N \times C^\prime}$$是转换特征，$$\mathbf{W}\in \mathbb{R}^{C\times C^\prime}$$是权重矩阵。
 
 <div align=center>
-<img src="../../_resources/19b55dd6f3b9c3406e73887b34eaa566.png" width="500" height="XXX" />
+<img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/19b55dd6f3b9c3406e73887b34eaa566.png" width="500" height="XXX" />
 </div>
 
 **Channel-wise Topology Modeling**
