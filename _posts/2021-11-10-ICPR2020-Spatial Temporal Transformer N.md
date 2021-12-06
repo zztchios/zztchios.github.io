@@ -1,3 +1,19 @@
+---
+
+layout:     post
+title:      Transformer系列
+subtitle:   Transformer
+date:       2021-11-10
+author:     zztchios
+header-img: img/post-bg-take.png
+catalog: true
+tags:
+    - Attention系列
+---
+<!--<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>-->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 **Spatial Temporal Transformer Network for Skeleton-based Action Recognition**
 
 >Author and Department
@@ -51,6 +67,8 @@
 # Background / Problem Statement(Introduction)
 
 >研究的背景以及问题陈述：作者需要解决的问题是什么？
+
+
 ## Problem Statement
 1. The topology of the graph representing the human body is fixed for all layers and actions, preventing the extraction of rich representations(图表示人体的拓扑结构都是固定的，不能够提取丰富的表达)
 2. 时空卷积都是基于2D卷积的，所以都受限于局部邻居的特征影响;
@@ -62,7 +80,7 @@
 >作者解决问题的方法/算法是什么？是否基于前人的方法？基于了哪些？
 
 
-![时空自注意力](../img/d96d9cea8760e8e0b9f05e17fad85bfe.png)
+![时空自注意力](img/d96d9cea8760e8e0b9f05e17fad85bfe.png)
 ## Spatial Self-Attention (SSA)
 
 &emsp;&emsp;如图1(a)所示, first calculate $q_i^t\in \mathcal{R}^{dq}$, $k_i^t\in \mathcal{R}^{dq}$ and $v_i^t\in \mathcal{R}^{dq}$;Then, 计算a query-key dot product 获取权重$\alpha_{i,j}^t\in matgh$(权重代表两个节点之间的关联性强度)。
@@ -83,7 +101,7 @@ $i^v,j^v$分别表示节点v在时刻i,j的情况。其他和SSA一样。
 ## Two-Stream Spatial Temporal Transformer Network
 &emsp;&emsp;既然有了SSA和TSA，那么下一步就是为了合并。
 
-![3a5b89dc02b240c2b2e618f2472086fa.png](../img/3a5b89dc02b240c2b2e618f2472086fa.png)
+![3a5b89dc02b240c2b2e618f2472086fa.png](img/3a5b89dc02b240c2b2e618f2472086fa.png)
 
 作者分别用SSA和TSA代替ST-GCN中的GCN和TCN
 
@@ -103,11 +121,11 @@ $\mathbf{T-TR}(x)=\mathbf{TSA}(GCN(x))$.
 
 ## Ablation Study
 
-![a01ee82ff89a6afd0ae5402a49e5ae1a.png](../img/a01ee82ff89a6afd0ae5402a49e5ae1a.png)
+![a01ee82ff89a6afd0ae5402a49e5ae1a.png](img/a01ee82ff89a6afd0ae5402a49e5ae1a.png)
 
 STR stream achieves slightly better performance(+0.4%) than the T-TR stream. 原因：S-TR的SSA只有25个关节点，而时间维度相关需要大量的帧。并且在参数方面也是下降了的
 
-![60fe8be7fd9a0fbc17d4a6ba57b5e42a.png](../img/60fe8be7fd9a0fbc17d4a6ba57b5e42a.png)
+![60fe8be7fd9a0fbc17d4a6ba57b5e42a.png](img/60fe8be7fd9a0fbc17d4a6ba57b5e42a.png)
 
 其中“playing with phone”,“typing”, and “cross hands” on S-TR 收益最大，上时间关联或者两个人的如：“hugging”, “point finger”, “pat on back”, on T-TR收益最大。
 
