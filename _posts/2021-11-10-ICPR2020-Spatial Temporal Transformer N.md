@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      Transformer系列
+title:      Spatial Temporal Transformer Network for Skeleton-based Action Recognition
 subtitle:   Transformer
 date:       2021-11-10
 author:     zztchios
@@ -14,7 +14,6 @@ tags:
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-**Spatial Temporal Transformer Network for Skeleton-based Action Recognition**
 
 >Author and Department
 > Chiara et. al. 米兰理工大学,意大利； 发表在ICPR，2020.
@@ -28,7 +27,6 @@ tags:
 这篇文章是将Transformer应用于skeleton-based action Recognition.算是赶了一波热度，效果也还不错。作者首先将ST-GCN中的GCN和TCN分别用SSA和TSA进行替换，最后增强了时空的自注意力，从而增强了效果，调参过程中应用了DropAttention。**复现**还是有问题，将来希望能够解决。
 
 
-[toc]
 
 # Abstract
 >分为三个部分：1.background 2.motivation 3.method 4. conclusion
@@ -83,20 +81,20 @@ tags:
 ![时空自注意力](https://github.com/zztchios/zztchios.github.io/raw/master/img/d96d9cea8760e8e0b9f05e17fad85bfe.png)
 ## Spatial Self-Attention (SSA)
 
-&emsp;&emsp;如图1(a)所示, first calculate $q_i^t\in \mathcal{R}^{dq}$, $k_i^t\in \mathcal{R}^{dq}$ and $v_i^t\in \mathcal{R}^{dq}$;Then, 计算a query-key dot product 获取权重$\alpha_{i,j}^t\in matgh$(权重代表两个节点之间的关联性强度)。
-a weighted sum is computed to obtain a new embedding for node $i^t$($\sum$的目的是为了获取节点新的嵌入)
+&emsp;&emsp;如图1(a)所示, first calculate $$q_i^t\in \mathcal{R}^{dq}$$, $$k_i^t\in \mathcal{R}^{dq}$$ and $$v_i^t\in \mathcal{R}^{dq}$$;Then, 计算a query-key dot product 获取权重$\alpha_{i,j}^t\in matgh$(权重代表两个节点之间的关联性强度)。
+a weighted sum is computed to obtain a new embedding for node $$i^t$$($$\sum$$的目的是为了获取节点新的嵌入)
 $$a_{i.j}^t=\mathbf{q_i^t}\cdot \mathbf{k_j^t}^T,\forall{t}\in T, \mathbf{z}_i^t=\sum_jsoftmax_j(\frac{a_{i.j}^t}{\sqrt{d_k}})\mathbf{v}_j^t\tag{1}$$
 
-&emsp;&emsp;Multi-head 自注意力经过重复H次嵌入提取过程，每次采用不同集合的学习参数。，从而获得节点嵌入$z_{i_1}^t,…,z_{i_H}^t$，所有参考$i^t$,如$concat(z_{i_1}^t,…,z_{i_H}^t)\cdot W_O$,并且构成SSA的输出特征。
+&emsp;&emsp;Multi-head 自注意力经过重复H次嵌入提取过程，每次采用不同集合的学习参数。，从而获得节点嵌入$$z_{i_1}^t,…,z_{i_H}^t$$，所有参考$$i^t$$,如$$concat(z_{i_1}^t,…,z_{i_H}^t)\cdot W_O$$,并且构成SSA的输出特征。
 
 &emsp;&emsp;==总结，这部分就是为了获取节点与其他节点在空间中的特征聚合==
 
-&emsp;&emsp;因此，如图1a所示，节点的关系($a_{i.j}^t$ score)动态的预测；所有动作的关系结构并不是固定的，都是随着样本自适应改变。SSA操作和全连接的图卷积相似，但是核心values($a_{i.j}^t$ score)是基于骨架动作动态预测的。
+&emsp;&emsp;因此，如图1a所示，节点的关系($$a_{i.j}^t$$ score)动态的预测；所有动作的关系结构并不是固定的，都是随着样本自适应改变。SSA操作和全连接的图卷积相似，但是核心values($$a_{i.j}^t$$ score)是基于骨架动作动态预测的。
 
 ## Temporal Self-Attention (TSA)
 
 $$a_{i.j}^v=\mathbf{q_i^v}\cdot \mathbf{k_j^v},\forall{v}\in V, \mathbf{z}_i^v=\sum_jsoftmax_j(\frac{a_{i.j}^v}{\sqrt{d_k}})\mathbf{v}_j^v\tag{2}$$
-$i^v,j^v$分别表示节点v在时刻i,j的情况。其他和SSA一样。
+$$i^v,j^v$$分别表示节点v在时刻i,j的情况。其他和SSA一样。
 
 ## Two-Stream Spatial Temporal Transformer Network
 &emsp;&emsp;既然有了SSA和TSA，那么下一步就是为了合并。
@@ -106,11 +104,11 @@ $i^v,j^v$分别表示节点v在时刻i,j的情况。其他和SSA一样。
 作者分别用SSA和TSA代替ST-GCN中的GCN和TCN
 
 **Spatial Transformer Stream (S-TR)**
-$\mathbf{S-TR}(x)=Conv_{2D(1\times K_t)}(\mathbf{SSA}(x))$. Following the original Transformer structure,Batch Normalization layer and skip connections are used。
+$$\mathbf{S-TR}(x)=Conv_{2D(1\times K_t)}(\mathbf{SSA}(x))$$. Following the original Transformer structure,Batch Normalization layer and skip connections are used。
 
 **Temporal Transformer Stream (T-TR)**
 
-$\mathbf{T-TR}(x)=\mathbf{TSA}(GCN(x))$. 
+$$\mathbf{T-TR}(x)=\mathbf{TSA}(GCN(x))$$. 
 
 # Experiments
 
