@@ -141,6 +141,7 @@ STR stream achieves slightly better performance(+0.4%) than the T-TR stream. 原
 >列出相关性高的文献，以便之后可以继续track下去。
 
 [[1]](https://arxiv.org/abs/1912.08435) Cho, S., Maqbool, M., Liu, F., Foroosh, H.: Self-attention network for skeletonbased human action recognition. In: The IEEE Winter Conference on Applications of Computer Vision. pp. 635–644 (2020)
+
 [[2]](https://arxiv.org/abs/1907.11065)Zehui, L., Liu, P., Huang, L., Fu, J., Chen, J., Qiu, X., Huang, X.: Dropattention: A regularization method for fully-connected self-attention networks. arXiv preprint arXiv:1907.11065 (2019)
 
 
