@@ -80,7 +80,7 @@ tags:
 >作者解决问题的方法/算法是什么？是否基于前人的方法？基于了哪些？
 
 
-![时空自注意力](img/d96d9cea8760e8e0b9f05e17fad85bfe.png)
+![时空自注意力](../img/d96d9cea8760e8e0b9f05e17fad85bfe.png)
 ## Spatial Self-Attention (SSA)
 
 &emsp;&emsp;如图1(a)所示, first calculate $q_i^t\in \mathcal{R}^{dq}$, $k_i^t\in \mathcal{R}^{dq}$ and $v_i^t\in \mathcal{R}^{dq}$;Then, 计算a query-key dot product 获取权重$\alpha_{i,j}^t\in matgh$(权重代表两个节点之间的关联性强度)。
