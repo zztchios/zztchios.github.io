@@ -138,7 +138,7 @@ $$\widetilde{X}=\mathcal{T(\mathbf{X})}=\mathbf{X}\mathbf{W}\tag3$$
 
    - $$\mathcal{M}_1(\varphi(x_i),\phi(x_j))=\sigma(\varphi(x_i)-\phi(x_j))\tag4$$ 
    $$\mathcal{M}_1(\cdot)$$本质上是计算沿着通道$$\varphi(x_i)$$和$$\phi(x_j)$$距离，并且利用这 些距离非线性转换作为特定通道拓扑结构节点之间关系
-   - $$\mathcal{M}_2(\varphi(x_i),\phi(x_j))=MLP(\varphi(x_i)||\phi(x_j))\tag5$$
+   - $$\mathcal{M}_2(\varphi(x_i),\phi(x_j))=MLP(\varphi(x_i)\|\|\phi(x_j))\tag5$$
    其中||是连接操作。
 
 <div align=center>
