@@ -70,7 +70,7 @@ CNN在场景物体细节方面产生重大损失。因此，需要采用GCN的�
 
 <div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/548172def5dd3abb3964d22726f6d1c6.png" width="600" height="XXX" class="jop-noMdConv"></div>
 
-
+<img src="https://n.sinaimg.cn/front/501/w1080h221/20190108/id6r-hrkkwef7008265.jpg "  height="160" width="700">
 
 ## 3.3 Self-supervised CNN-GCN Autoencoder
 
