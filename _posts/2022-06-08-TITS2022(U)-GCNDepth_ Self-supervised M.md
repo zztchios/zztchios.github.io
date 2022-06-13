@@ -68,7 +68,7 @@ $$
 
 CNN在场景物体细节方面产生重大损失。因此，需要采用GCN的拓扑结构增加隐含层的特征表示。帮助模型学习如何从低维映射到深度信息。
 
-<div align="center"><img src="../../_resources/548172def5dd3abb3964d22726f6d1c6.png" width="600" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/548172def5dd3abb3964d22726f6d1c6.png" width="600" height="XXX" class="jop-noMdConv"></div>
 
 
 
@@ -83,30 +83,30 @@ CNN在场景物体细节方面产生重大损失。因此，需要采用GCN的�
 
 CNN能够利用图像数据的局部连通性和全局结构，在训练阶段通过提取有意义特征。作者说CNNs更加适合从全局场景中提取全局视觉特征(不应该是transformer么？)。编码器有5层深度层，最后四层是Resnet-50，第一层是一个1x1的卷积(CNN+BN+max-pooling)。如表1所示：
 
-<div align="center"><img src="../../_resources/c2e81379423190219060e2662d6deccc.png" width="400" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/c2e81379423190219060e2662d6deccc.png" width="400" height="XXX" class="jop-noMdConv"></div>
 
 **DepthNet Decoder**
 
 解码器部分作者采用几何深度网络，提取物体的局部特征，并且通过生成深度拓扑图保持节点间的深度图，下图说，初始化图的邻接矩阵是基于encoder最后一层生成特征的节点数量(邻接矩阵，需要进一步看代码)。
 
-<div align="center"><img src="../../_resources/589b84478fd62da968d9c393d38c11f6.png" width="600" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/589b84478fd62da968d9c393d38c11f6.png" width="600" height="XXX" class="jop-noMdConv"></div>
 
 作者采用4层GCN重构深度图，每层都是upconvolution层，并将其与来自编码器网络相应层的相应特征映射连接，并使用其一层GCN进行上采样粗深度预测。这种方法保留从较粗特征图中传递的高级信息(GCN提取的)以及较低层特征图中提取的细粒度局部信息(inverse convolution)。每一次concatenate都会提高分辨率2倍。最后输出图像的分辨率是输入的一半。
 具体构造如表Ⅱ所示：
 
-<div align="center"><img src="../../_resources/e58fe48e238c1cfbb3c7e6b4ef10ecd8.png" width="400" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/e58fe48e238c1cfbb3c7e6b4ef10ecd8.png" width="400" height="XXX" class="jop-noMdConv"></div>
 
 **PoseNet Estimator**
 PoseNet是一个回归网络，输入是相邻图像($I_s$和$I_t$)的concatenate。encoder是5层cnn(Conv1x1,ResNet-18)。decoder如表Ⅲ所示：
 
-<div align="center"><img src="../../_resources/5466fef4db2ae4ec840f99f41754ad9d.png" width="400" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/5466fef4db2ae4ec840f99f41754ad9d.png" width="400" height="XXX" class="jop-noMdConv"></div>
 
 ## 3.4 Overall Pipelines
 
 
 DepthNet输入是源图像，输出是depth image。 PoseNet的输出是source image$I_s$和target image $I_t$的相对位置。模型的整体结构如图3所示：
 
-<div align="center"><img src="../../_resources/a2919dab26ac724df525c3144a1a7208.png" width="500" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/a2919dab26ac724df525c3144a1a7208.png" width="500" height="XXX" class="jop-noMdConv"></div>
 
 ## 3.5 Geometry Models and Losses
 
@@ -156,13 +156,13 @@ $$
 
 > 作者如何评估自己的方法？实验的setup是什么样的？感兴趣实验数据和结果有哪些？有没有问题或者可以借鉴的地方？
 
-<div align="center"><img src="../../_resources/3e5fb5a5a1bff10aefb8d24922e8f3f3.png" width="400" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/3e5fb5a5a1bff10aefb8d24922e8f3f3.png" width="400" height="XXX" class="jop-noMdConv"></div>
 
-<div align="center"><img src="../../_resources/d385271be5af9c9428037423c5d8594e.png" width="400" height="XXX" class="jop-noMdConv"></div>
-<div align="center"><img src="../../_resources/b14cf78781994d82693eb7185aa94524.png" width="400" height="XXX" class="jop-noMdConv"></div>
-<div align="center"><img src="../../_resources/88bbb57cd4cbce26fb61fb805a941f4f.png" width="400" height="XXX" class="jop-noMdConv"></div>
-<div align="center"><img src="../../_resources/3458c8c2a6b83a10e1621e5740d1a12d.png" width="400" height="XXX" class="jop-noMdConv"></div>
-<div align="center"><img src="../../_resources/7388988795f9ed8b285ec19ed9da453e.png" width="400" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/d385271be5af9c9428037423c5d8594e.png" width="400" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/b14cf78781994d82693eb7185aa94524.png" width="400" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/88bbb57cd4cbce26fb61fb805a941f4f.png" width="400" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/3458c8c2a6b83a10e1621e5740d1a12d.png" width="400" height="XXX" class="jop-noMdConv"></div>
+<div align="center"><img src="https://github.com/zztchios/zztchios.github.io/raw/master/img/7388988795f9ed8b285ec19ed9da453e.png" width="400" height="XXX" class="jop-noMdConv"></div>
 
 
 # Conclusion
